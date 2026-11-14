@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayesha &amp; Umar – Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&family=Amiri&display=swap" rel="stylesheet">
+<style>
+:root{--plum:#06231c;--wine:#0e5a4a;--blush:#ffd3e1;--gold:#e3c28a;--cream:#fff6ec;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{background:var(--plum);color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;overflow:hidden}
+.script{font-family:'Pinyon Script','Snell Roundhand',cursive;font-weight:400}
+.ar{font-family:'Amiri',serif}
+.bg{position:fixed;inset:0;background:radial-gradient(60% 40% at 20% 15%,#12856a 0,transparent 70%),radial-gradient(50% 40% at 85% 85%,#1b5f8f 0,transparent 70%),radial-gradient(40% 30% at 92% 18%,#7a2f5a 0,transparent 70%),var(--plum)}
+.orb{position:fixed;border-radius:50%;filter:blur(40px);opacity:.35;animation:drift 14s ease-in-out infinite alternate}
+.o1{width:220px;height:220px;background:#ffb347;left:-60px;top:30%}
+.o2{width:260px;height:260px;background:#ff7aa8;right:-90px;top:8%;animation-delay:-5s}
+.o3{width:200px;height:200px;background:#3fd0c0;right:10%;bottom:-70px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(40px,-60px) scale(1.2)}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:6}
+
+/* envelope cover */
+#cover{position:fixed;inset:0;z-index:10;background:var(--plum);display:flex;align-items:center;justify-content:center;transition:opacity 1s,transform 1.2s}
+#cover.gone{opacity:0;transform:scale(1.6);pointer-events:none}
+.env{position:relative;width:min(70vw,280px);aspect-ratio:1;cursor:pointer;display:grid;place-items:center;transition:transform 2.2s;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.env.open{animation:none}
+.card{position:absolute;left:6%;right:6%;top:6%;bottom:6%;background:var(--cream);color:var(--wine);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transition:transform 1.1s .5s;z-index:1}
+.card .ar{font-size:1.3rem}.card .script{font-size:2.3rem;line-height:1.1}
+.env.open .card{transform:translateY(-62%)}
+.pocket{position:absolute;inset:0;z-index:2;background:linear-gradient(135deg,#d4558c 50%,transparent 50%) left/50% 100% no-repeat,linear-gradient(225deg,#d4558c 50%,transparent 50%) right/50% 100% no-repeat,linear-gradient(0deg,#a8336a 55%,transparent 55%);border-radius:6px}
+.flap{position:absolute;left:0;right:0;top:0;height:56%;z-index:3;background:#e8689a;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s}
+.env.open .flap{transform:rotateX(180deg);z-index:0}
+.wax{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px;border-radius:50%;z-index:4;background:radial-gradient(circle at 35% 30%,#f0d49a,#b88a3e);display:grid;place-items:center;color:#5a2236;font-size:1.7rem;box-shadow:0 4px 12px rgba(0,0,0,.4);transition:opacity .4s}
+.env.open .wax{opacity:0}
+.hint{position:absolute;bottom:14%;width:100%;text-align:center;letter-spacing:.3em;font-size:.85rem;color:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+
+.env{position:relative;width:min(70vw,280px);aspect-ratio:1;cursor:pointer;display:grid;place-items:center;transition:transform 2.2s;animation:bob 3s ease-in-out infinite}
+.env .card{display:none}
+.pt{position:absolute;left:50%;bottom:50%;width:34%;height:46%;margin-left:-17%;transform-origin:50% 100%;border-radius:50% 50% 50% 50%/85% 85% 15% 15%;background:linear-gradient(180deg,var(--c1),var(--c2));transform:rotate(calc(var(--i)*45deg)) scaleY(.3);transition:transform 1.5s cubic-bezier(.2,.8,.2,1) calc(var(--i)*.07s);box-shadow:0 0 18px rgba(255,255,255,.15)}
+.pt:nth-child(odd){--c1:#ffb0cb;--c2:#d4407f}.pt:nth-child(even){--c1:#ffe08a;--c2:#ff8a3d}
+.pt.b{transform:rotate(calc(var(--i)*45deg + 22.5deg)) scaleY(.24);--c1:#9ff3e4;--c2:#12856a}
+.env.open .pt{transform:rotate(calc(var(--i)*45deg)) scaleY(1.45)}
+.env.open .pt.b{transform:rotate(calc(var(--i)*45deg + 22.5deg)) scaleY(1.2)}
+.env.open{transform:rotate(45deg) scale(1.1)}
+.core{position:relative;z-index:3;width:30%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff2c9,#e3a93e);display:grid;place-items:center;font-size:2rem;color:#06231c;box-shadow:0 0 30px #ffd27a;animation:glow 2s ease-in-out infinite}
+.env.open .core{transform:scale(3.5);opacity:0;transition:transform 1s 1.1s,opacity 1s 1.1s}
+@keyframes glow{50%{box-shadow:0 0 60px #ffd27a}}
+section:nth-of-type(2) h2{color:#ffb347}section:nth-of-type(3) h2{color:#5fe3d0}section:nth-of-type(4) h2{color:#ff9fc0}
+main{position:relative;z-index:2;height:100%;overflow-y:auto;scroll-snap-type:y proximity}
+section{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3.5rem 1.4rem;scroll-snap-align:start}
+.glass{width:min(100%,430px);padding:2.2rem 1.5rem;border-radius:28px;background:rgba(255,246,236,.07);border:1px solid rgba(227,194,138,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.gold{color:var(--gold)}
+.sm{font-size:1.2rem;line-height:1.6}
+.shine{font-size:clamp(3.2rem,15vw,4.4rem);line-height:1.1;background:linear-gradient(100deg,#c9a15c 20%,#fff2c9 40%,#c9a15c 60%) 0 0/250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 4s linear infinite}
+@keyframes sheen{to{background-position:-250% 0}}
+.amp{font-size:2rem;color:var(--blush);margin:.1rem 0}
+.line{width:70px;height:1px;background:var(--gold);margin:1.1rem auto}
+.art{width:170px;display:block;margin:-.4rem auto .6rem;fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round;filter:drop-shadow(0 0 8px rgba(227,194,138,.35))}
+.art .spin{transform-origin:100px 145px;animation:spin 40s linear infinite}
+.art .glow{animation:pulse 3s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+h2{font-size:3rem;line-height:1.1}
+.date{font-size:1.5rem;letter-spacing:.06em;margin:.2rem 0 1rem}
+.t{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px dashed rgba(227,194,138,.35);font-size:1.2rem}
+.t span:first-child{color:var(--gold)}
+.t:last-of-type{border:0}
+.venue{margin:1rem 0;font-size:1.15rem;line-height:1.5}
+.btns{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:.8rem}
+.btn{display:inline-block;padding:.6rem 1.1rem;border-radius:999px;border:1px solid var(--gold);color:var(--cream);text-decoration:none;font-size:1.05rem;transition:background .2s,color .2s}
+.btn.fill{background:var(--gold);color:var(--plum)}
+.btn:hover,.btn:focus-visible{background:var(--cream);color:var(--plum);outline:none}
+.cd{display:flex;gap:.7rem;justify-content:center;margin-top:1.2rem}
+.cd div{min-width:66px;padding:.6rem .3rem;border:1px solid rgba(227,194,138,.5);border-radius:14px}
+.cd b{display:block;font-size:2rem;font-weight:600}.cd small{font-size:.8rem;color:var(--gold);letter-spacing:.1em}
+.rv{opacity:0;transform:translateY(40px) scale(.97);transition:opacity 1s,transform 1s}
+.rv.in{opacity:1;transform:none}
+.hint2{margin-top:1.4rem;color:var(--gold);font-size:.95rem;animation:pulse 2s infinite}
+#mus{position:fixed;right:max(14px,env(safe-area-inset-right,0px));top:calc(14px + env(safe-area-inset-top,0px));z-index:20;background:rgba(6,35,28,.88);border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:.45rem .9rem;font:inherit;font-size:.95rem;cursor:pointer;display:none}
+.env:focus-visible,#mus:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}#fx{display:none}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+<canvas id="fx"></canvas>
+<button id="mus" aria-label="Toggle music">♪ Music on</button>
+
+<div id="cover">
+  <div class="env" id="env" role="button" tabindex="0" aria-label="Open invitation">
+    <div class="card"><div class="ar" dir="rtl">بسم الله الرحمن الرحيم</div><div class="script">Ayesha &amp; Umar</div></div>
+    <span class="pt b" style="--i:0"></span><span class="pt b" style="--i:1"></span><span class="pt b" style="--i:2"></span><span class="pt b" style="--i:3"></span><span class="pt b" style="--i:4"></span><span class="pt b" style="--i:5"></span><span class="pt b" style="--i:6"></span><span class="pt b" style="--i:7"></span><span class="pt" style="--i:0"></span><span class="pt" style="--i:1"></span><span class="pt" style="--i:2"></span><span class="pt" style="--i:3"></span><span class="pt" style="--i:4"></span><span class="pt" style="--i:5"></span><span class="pt" style="--i:6"></span><span class="pt" style="--i:7"></span><div class="core script">A</div>
+  </div>
+  <div class="hint">OPEN YOUR INVITATION</div>
+</div>
+
+<main>
+  <section>
+    <div class="glass rv">
+      <div class="ar gold" dir="rtl" style="font-size:1.7rem">بسم الله الرحمن الرحيم</div>
+      <p class="sm" style="margin-top:1rem">With the blessings of Allah,<br><b>Mrs. Muhammad Arshad</b><br>invites you to celebrate the wedding of her daughter</p>
+      <div class="shine script" style="margin-top:.8rem">Ayesha Arshad</div>
+      <div class="amp script">weds</div>
+      <div class="shine script">Muhammad Umar Dilbar</div>
+      <div class="line"></div>
+      <p class="sm">4 &amp; 5 December 2026 · Faisalabad</p>
+      <div class="cd" id="cd" aria-label="Countdown to Mehndi"></div>
+    </div>
+    <p class="hint2">scroll down</p>
+  </section>
+
+  <section>
+    <div class="glass rv">
+      <svg class="art" viewBox="0 0 200 215" role="img" aria-label="Henna hand design"><g fill="rgba(227,194,138,.07)"><rect x="55" y="100" width="90" height="92" rx="30"/><rect x="58" y="45" width="18" height="68" rx="9"/><rect x="80" y="28" width="18" height="84" rx="9"/><rect x="102" y="36" width="18" height="76" rx="9"/><rect x="124" y="54" width="16" height="58" rx="8"/><rect x="28" y="108" width="18" height="56" rx="9" transform="rotate(-35 37 136)"/></g><g stroke-dasharray="1 5"><path d="M67 55v50M89 38v66M111 46v58M132 63v44"/></g><g><path d="M62 64l5 5 5-5M84 48l5 5 5-5M106 56l5 5 5-5M127 72l5 5 5-5"/><circle cx="67" cy="90" r="2"/><circle cx="89" cy="80" r="2"/><circle cx="111" cy="84" r="2"/><circle cx="132" cy="92" r="2"/></g><g class="spin glow"><circle cx="100" cy="145" r="26"/><circle cx="100" cy="145" r="17" stroke-dasharray="2 4"/><g><ellipse cx="100" cy="124" rx="4" ry="9"/><ellipse cx="100" cy="124" rx="4" ry="9" transform="rotate(45 100 145)"/><ellipse cx="100" cy="124" rx="4" ry="9" transform="rotate(90 100 145)"/><ellipse cx="100" cy="124" rx="4" ry="9" transform="rotate(135 100 145)"/><ellipse cx="100" cy="124" rx="4" ry="9" transform="rotate(180 100 145)"/><ellipse cx="100" cy="124" rx="4" ry="9" transform="rotate(225 100 145)"/><ellipse cx="100" cy="124" rx="4" ry="9" transform="rotate(270 100 145)"/><ellipse cx="100" cy="124" rx="4" ry="9" transform="rotate(315 100 145)"/></g></g><circle cx="100" cy="145" r="4" fill="var(--gold)"/><path d="M62 182q38 14 76 0M66 192q34 12 68 0" stroke-dasharray="2 3"/><path d="M35 126l8 8M31 140l8 8"/></svg>
+      <h2 class="script gold">Mehndi</h2>
+      <p class="date">Friday, 4 December 2026</p>
+      <div class="t"><span>Guest arrival</span><span>6:00 PM</span></div>
+      <div class="t"><span>Rasm-e-Hina</span><span>7:00 PM</span></div>
+      <div class="t"><span>Dinner</span><span>8:00 PM</span></div>
+      <p class="venue">House #742-B, Street #32,<br>Amin Town, Faisalabad</p>
+      <div class="btns">
+        <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=742+Amin+Town+Rd%2C+Amin+Town%2C+Faisalabad%2C+Pakistan">Open in Maps</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ayesha%27s+Mehndi&dates=20261204T180000/20261204T230000&ctz=Asia/Karachi&location=742+Amin+Town+Rd%2C+Amin+Town%2C+Faisalabad%2C+Pakistan&details=Guest+arrival+6%3A00+PM%2C+Rasm-e-Hina+7%3A00+PM%2C+Dinner+8%3A00+PM">Add to calendar</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="glass rv">
+      <svg class="art" viewBox="0 0 200 200" role="img" aria-label="Wedding arch with crescent moon and garlands"><path d="M28 192V90a72 72 0 0 1 144 0v102"/><path d="M40 192V92a60 60 0 0 1 120 0v100" stroke-dasharray="2 4"/><path class="glow" fill="var(--gold)" stroke="none" d="M104 52a26 26 0 1 0 0 52a20 20 0 1 1 0-52z"/><path class="glow" fill="var(--gold)" stroke="none" d="M122 70l3 7 7 .5-5.4 4.6 1.8 7-6.4-3.8-6.4 3.8 1.8-7-5.4-4.6 7-.5z"/><path d="M40 118q60 44 120 0"/><g fill="var(--gold)" stroke="none"><circle cx="52" cy="127" r="3.5"/><circle cx="68" cy="137" r="3.5"/><circle cx="84" cy="143" r="3.5"/><circle cx="100" cy="145" r="4"/><circle cx="116" cy="143" r="3.5"/><circle cx="132" cy="137" r="3.5"/><circle cx="148" cy="127" r="3.5"/></g><g class="glow"><path d="M68 139v10M132 139v10"/><path d="M62 149h12l-2 14H64zM126 149h12l-2 14h-8z" fill="rgba(227,194,138,.25)"/></g><path d="M84 192c0-14 6-22 16-22s16 8 16 22"/><path d="M100 170v-8M94 166l6-6 6 6"/><path d="M20 192h160"/></svg>
+      <h2 class="script gold">Barat</h2>
+      <p class="date">Saturday, 5 December 2026</p>
+      <div class="t"><span>Time</span><span>7:00 PM</span></div>
+      <p class="venue"><b>The Sitara Marquee by Taj Mahal</b><br>Faisalabad–Sheikhupura Rd, Civic Centre,<br>Gattwala, Faisalabad, Punjab</p>
+      <div class="btns">
+        <a class="btn fill" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=The+Sitara+Marquee+by+Taj+Mahal+Sheikhupura+Rd+Civic+Centre+Gattwala+Faisalabad">Open in Maps</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ayesha+%26+Umar%27s+Barat&dates=20261205T190000/20261205T230000&ctz=Asia/Karachi&location=The+Sitara+Marquee+by+Taj+Mahal%2C+Faisalabad-Sheikhupura+Rd%2C+Civic+Centre%2C+Gattwala%2C+Faisalabad&details=Barat+at+7%3A00+PM">Add to calendar</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="glass rv">
+      <h2 class="script gold">Your presence</h2>
+      <div class="line"></div>
+      <p class="sm">Your prayers and presence will make Ayesha’s new beginning even more special.</p>
+      <p class="sm gold" style="margin-top:1.3rem">RSVP</p>
+      <div class="btns" style="flex-direction:column;align-items:center">
+        <a class="btn" href="tel:+923417662606">0341 7662606</a>
+        <a class="btn" href="tel:+923137654765">0313 7654765</a>
+        <a class="btn" href="tel:+923006631940">0300 6631940</a>
+      </div>
+      <p class="sm" style="margin-top:1.5rem">With love,<br><b>Mrs. Muhammad Arshad</b> &amp; family</p>
+    </div>
+  </section>
+</main>
+
+<script>
+/* countdown to Mehndi (6 PM Pakistan time = 13:00 UTC) */
+const target=Date.UTC(2026,11,4,13,0,0),cd=document.getElementById('cd');
+function upd(){let d=target-Date.now();if(d<0)d=0;const v=[[Math.floor(d/864e5),'DAYS'],[Math.floor(d%864e5/36e5),'HRS'],[Math.floor(d%36e5/6e4),'MIN'],[Math.floor(d%6e4/1e3),'SEC']];
+cd.innerHTML=v.map(x=>'<div><b>'+String(x[0]).padStart(2,'0')+'</b><small>'+x[1]+'</small></div>').join('')}
+upd();setInterval(upd,1000);
+
+/* sparkles + rising rose petals */
+var cf=[];
+function burst(){for(var i=0;i<110;i++){var a=Math.random()*6.283,s=4+Math.random()*9;cf.push({x:W/2,y:H*.5,vx:Math.cos(a)*s,vy:Math.sin(a)*s-4,r:3+Math.random()*4,rot:Math.random()*6,vr:(Math.random()-.5)*.3,c:['#f3cf8f','#ff9fc0','#fff2c9','#ffffff','#e04f8c'][i%5],l:1})}}
+function drawC(){cf=cf.filter(p=>p.l>0);cf.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vx*=.98;p.vy=p.vy*.98+.18;p.rot+=p.vr;p.l-=.008;cx.save();cx.globalAlpha=Math.max(p.l,0);cx.translate(p.x,p.y);cx.rotate(p.rot);cx.fillStyle=p.c;cx.fillRect(-p.r,-p.r/2,p.r*2,p.r);cx.restore()})}
+const cv=document.getElementById('fx'),cx=cv.getContext('2d');let W,H,ps=[],on=false;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+function mk(y){return{x:Math.random()*W,y:y??H+10,r:2+Math.random()*4,v:.4+Math.random()*.9,s:Math.random()*6,w:.02+Math.random()*.02,c:['#e3c28a','#f3b6c4','#5fe3d0','#ffb347'][Math.random()*4|0]}}
+function tick(){cx.clearRect(0,0,W,H);drawC();if(on)ps.forEach(p=>{p.y-=p.v;p.s+=p.w;p.x+=Math.sin(p.s)*.6;
+cx.globalAlpha=.4+.4*Math.sin(p.s*2);cx.fillStyle=p.c;cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fill();
+if(p.y<-10)Object.assign(p,mk())});requestAnimationFrame(tick)}tick();
+
+/* music: your own song.mp3 plays if you upload it next to index.html; otherwise a slow romantic piano + strings theme (original, generated) plays */
+let ac,master,playing=false,timer,step=0;
+const aud=new Audio('song.mp3');aud.loop=true;aud.volume=.85;
+const CH=[[130.81,261.63,329.63,392],[98,246.94,293.66,392],[110,220,261.63,329.63],[87.31,220,261.63,349.23]];
+const ML=[[659.25,587.33],[587.33,493.88],[523.25,659.25],[698.46,659.25]];
+function ini(){ac=new (window.AudioContext||window.webkitAudioContext)();master=ac.createGain();master.gain.value=.9;
+const cv2=ac.createConvolver(),n=ac.sampleRate*2.6|0,b=ac.createBuffer(2,n,ac.sampleRate);
+for(let c=0;c<2;c++){const d=b.getChannelData(c);for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,2.4)}
+cv2.buffer=b;const w=ac.createGain();w.gain.value=.45;master.connect(ac.destination);master.connect(cv2);cv2.connect(w);w.connect(ac.destination)}
+function pn(f,t,d,g){[[1,g,'triangle'],[2,g*.25,'sine'],[3,g*.08,'sine']].forEach(a=>{const o=ac.createOscillator(),e=ac.createGain();o.type=a[2];o.frequency.value=f*a[0];
+e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(a[1],t+.01);e.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(e).connect(master);o.start(t);o.stop(t+d+.05)})}
+function pad(f,t,d,g){const o=ac.createOscillator(),fl=ac.createBiquadFilter(),e=ac.createGain();o.type='sawtooth';o.frequency.value=f;fl.type='lowpass';fl.frequency.value=650;
+e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(g,t+1.6);e.gain.linearRampToValueAtTime(0,t+d);o.connect(fl).connect(e).connect(master);o.start(t);o.stop(t+d+.05)}
+function beat(){const t=ac.currentTime+.05,bar=((step/8)|0)%4,i=step%8,c=CH[bar];
+pn(c[[0,1,2,3,2,3,1,2][i]],t,i==0?2.4:1.7,i==0?.17:.09);
+if(i==0)[c[1],c[2],c[3]].forEach(f=>pad(f,t,4,.018));
+if(i==0||i==4)pn(ML[bar][i/4],t,2.8,.12);
+step++}
+function synth(){try{clearInterval(timer);timer=setInterval(beat,480);beat();playing=true}catch(e){}}
+function startMusic(){try{if(!ac)ini();ac.resume()}catch(e){}
+aud.play().then(()=>{playing=true}).catch(synth)}
+function stopMusic(){clearInterval(timer);aud.pause();playing=false}
+const mus=document.getElementById('mus');
+mus.onclick=()=>{if(playing){stopMusic();mus.textContent='♪ Music off'}else{startMusic();mus.textContent='♪ Music on'}};
+
+/* open envelope */
+const env=document.getElementById('env'),cover=document.getElementById('cover');
+function open(){if(env.classList.contains('open'))return;env.classList.add('open');startMusic();
+setTimeout(()=>{cover.classList.add('gone');burst();mus.style.display='block';ps=Array.from({length:40},()=>mk(Math.random()*H));on=true;
+document.querySelector('.rv').classList.add('in')},2200)}
+env.onclick=open;env.onkeydown=e=>{if(e.key==='Enter'||e.key===' ')open()};
+/* reveal cards on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{root:document.querySelector('main'),threshold:.25});
+document.querySelectorAll('.rv').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
