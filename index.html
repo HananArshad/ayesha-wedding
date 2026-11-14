@@ -82,6 +82,39 @@ h2{font-size:3rem;line-height:1.1}
 #mus{position:fixed;right:max(14px,env(safe-area-inset-right,0px));top:calc(14px + env(safe-area-inset-top,0px));z-index:20;background:rgba(6,35,28,.88);border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:.45rem .9rem;font:inherit;font-size:.95rem;cursor:pointer;display:none}
 .env:focus-visible,#mus:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}#fx{display:none}.rv{opacity:1;transform:none}}
+
+#cover{background:radial-gradient(circle at 50% 46%,#fff0b8 0,#e8b04a 22%,#8a5a1c 40%,#06231c 72%)}
+#cover .env{position:fixed;inset:0;width:auto;aspect-ratio:auto;display:block;animation:none;transition:none;transform:none!important;perspective:none}
+.cur{position:absolute;top:0;bottom:0;width:50.5%;background:repeating-linear-gradient(90deg,#0a4538 0 22px,#12705a 22px 40px,#0a4538 40px 64px);transition:transform 2.6s cubic-bezier(.75,0,.2,1);box-shadow:inset 0 -80px 90px rgba(0,0,0,.45);z-index:2}
+.cur.l{left:0;transform-origin:left;border-right:3px solid #e3c28a}
+.cur.r{right:0;transform-origin:right;border-left:3px solid #e3c28a}
+.env.open .cur.l{transform:translateX(-97%) scaleX(.85)}
+.env.open .cur.r{transform:translateX(97%) scaleX(.85)}
+.val{position:absolute;left:0;right:0;top:0;height:46px;z-index:4;background:linear-gradient(180deg,#e3c28a,#b88a3e);border-bottom:3px solid #fff2c9;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.stage{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.5rem;transition:opacity .9s}
+.env.open .stage{opacity:0;pointer-events:none}
+.stage .ar{font-size:1.8rem;color:var(--gold)}
+.stage .t{font-size:clamp(3rem,14vw,4.2rem);color:#f0d089;line-height:1.1;margin-top:.4rem}
+.stage .sub{font-size:1.25rem;letter-spacing:.04em}
+.btnx{margin-top:2.2rem;padding:.8rem 2.2rem;border-radius:999px;background:var(--gold);color:#06231c;font-size:1.3rem;font-weight:600;letter-spacing:.06em;animation:glow2 2s ease-in-out infinite}
+@keyframes glow2{50%{box-shadow:0 0 34px rgba(227,194,138,.8);transform:scale(1.05)}}
+
+
+html,body{height:100%;height:100dvh}
+main{height:100%;height:100dvh}
+section{min-height:100%;min-height:100dvh;padding:1.2rem 1.1rem}
+section:first-of-type{position:relative;padding-bottom:3.4rem}
+section:first-of-type .glass{padding:1.2rem 1rem}
+section:first-of-type .ar{font-size:1.45rem!important}
+section:first-of-type .sm{font-size:1.02rem;line-height:1.4}
+section:first-of-type .shine{font-size:clamp(2.1rem,10.5vw,3.1rem);line-height:1.05;margin-top:.3rem!important}
+section:first-of-type .amp{font-size:1.4rem;margin:0}
+section:first-of-type .line{margin:.6rem auto}
+section:first-of-type .cd{margin-top:.8rem;gap:.5rem}
+section:first-of-type .cd div{min-width:56px;padding:.35rem .2rem}
+section:first-of-type .cd b{font-size:1.45rem}
+.hint2{position:absolute;bottom:calc(.9rem + env(safe-area-inset-bottom,0px));left:0;right:0;margin:0;font-size:1rem;animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(6px);opacity:.6}}
 </style>
 </head>
 <body>
@@ -91,10 +124,9 @@ h2{font-size:3rem;line-height:1.1}
 
 <div id="cover">
   <div class="env" id="env" role="button" tabindex="0" aria-label="Open invitation">
-    <div class="card"><div class="ar" dir="rtl">بسم الله الرحمن الرحيم</div><div class="script">Ayesha &amp; Umar</div></div>
-    <span class="pt b" style="--i:0"></span><span class="pt b" style="--i:1"></span><span class="pt b" style="--i:2"></span><span class="pt b" style="--i:3"></span><span class="pt b" style="--i:4"></span><span class="pt b" style="--i:5"></span><span class="pt b" style="--i:6"></span><span class="pt b" style="--i:7"></span><span class="pt" style="--i:0"></span><span class="pt" style="--i:1"></span><span class="pt" style="--i:2"></span><span class="pt" style="--i:3"></span><span class="pt" style="--i:4"></span><span class="pt" style="--i:5"></span><span class="pt" style="--i:6"></span><span class="pt" style="--i:7"></span><div class="core script">A</div>
+    <div class="val"></div><div class="cur l"></div><div class="cur r"></div>
+    <div class="stage"><div class="ar" dir="rtl">بسم الله الرحمن الرحيم</div><div class="t script">You’re Invited</div><div class="sub">to the wedding of Ayesha &amp; Umar</div><div class="btnx">Open Invitation</div></div>
   </div>
-  <div class="hint">OPEN YOUR INVITATION</div>
 </div>
 
 <main>
@@ -109,7 +141,7 @@ h2{font-size:3rem;line-height:1.1}
       <p class="sm">4 &amp; 5 December 2026 · Faisalabad</p>
       <div class="cd" id="cd" aria-label="Countdown to Mehndi"></div>
     </div>
-    <p class="hint2">scroll down</p>
+    <p class="hint2">Scroll down ↓</p>
   </section>
 
   <section>
